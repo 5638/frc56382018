@@ -57,9 +57,16 @@ public class RobotMap {
         
         driveTrainTalonSRXleft = new WPI_TalonSRX(2);
         driveTrainTalonSRXleft.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
+        driveTrainTalonSRXleft.config_kP(0, 0, 10);
+        driveTrainTalonSRXleft.config_kI(0, 0, 10);
+        driveTrainTalonSRXleft.config_kD(0, 0, 10);
+        driveTrainTalonSRXleft.configNominalOutputForward(0, 10);
+        driveTrainTalonSRXleft.configNominalOutputReverse(0, 10);
+        driveTrainTalonSRXleft.configPeakOutputForward(1, 10);
+        driveTrainTalonSRXleft.configPeakOutputReverse(-1, 10);
         
-        //driveTrainVictorSPXleft.set(ControlMode.Follower, 2);
         driveTrainVictorSPXleft = new WPI_VictorSPX(3);
+        driveTrainVictorSPXleft.follow(driveTrainTalonSRXleft);
         
         driveTrainleftGearbox = new SpeedControllerGroup(driveTrainTalonSRXleft, driveTrainVictorSPXleft  );
         //LiveWindow.addActuator("driveTrain", "leftGearbox", driveTrainleftGearbox);
@@ -69,12 +76,20 @@ public class RobotMap {
         
         driveTrainTalonSRXright = new WPI_TalonSRX(4);
         driveTrainTalonSRXright.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
+        driveTrainTalonSRXright.config_kP(0, 0, 10);
+        driveTrainTalonSRXright.config_kI(0, 0, 10);
+        driveTrainTalonSRXright.config_kD(0, 0, 10);
+        driveTrainTalonSRXright.configNominalOutputForward(0, 10);
+        driveTrainTalonSRXright.configNominalOutputReverse(0, 10);
+        driveTrainTalonSRXright.configPeakOutputForward(1, 10);
+        driveTrainTalonSRXright.configPeakOutputReverse(-1, 10);
         
         driveTrainVictorSPXright = new WPI_VictorSPX(5);
+        driveTrainVictorSPXright.follow(driveTrainTalonSRXright);
         //driveTrainVictorSPXright.set(ControlMode.Follower, 4);
         
         
-        driveTrainrightGearbox = new SpeedControllerGroup(driveTrainTalonSRXright, driveTrainVictorSPXright  );
+        driveTrainrightGearbox = new SpeedControllerGroup(driveTrainTalonSRXright, driveTrainVictorSPXright);
         //LiveWindow.addActuator("driveTrain", "rightGearbox", driveTrainrightGearbox);
         
         driveTrainRobotDrive21 = new DifferentialDrive(driveTrainleftGearbox, driveTrainrightGearbox);
@@ -85,7 +100,14 @@ public class RobotMap {
         driveTrainRobotDrive21.setMaxOutput(1.0);
 
         elevatorTalonSRXelevator = new WPI_TalonSRX(6);
-        
+        elevatorTalonSRXelevator.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
+        elevatorTalonSRXelevator.configNominalOutputForward(0, 10);
+        elevatorTalonSRXelevator.configNominalOutputReverse(0, 10);
+        elevatorTalonSRXelevator.configPeakOutputForward(.5, 10);
+        elevatorTalonSRXelevator.configPeakOutputReverse(-.375, 10);
+        elevatorTalonSRXelevator.config_kP(1, 0, 10);
+        elevatorTalonSRXelevator.config_kI(0, 0, 10);
+        elevatorTalonSRXelevator.config_kD(0, 0, 10);
         
         intakeTalonSRXintake2 = new WPI_VictorSPX(10);
         
@@ -95,6 +117,13 @@ public class RobotMap {
         
         dumpTalonSRXdump = new WPI_TalonSRX(7);
         dumpTalonSRXdump.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
+        dumpTalonSRXdump.configNominalOutputForward(0, 10);
+        dumpTalonSRXdump.configNominalOutputReverse(0, 10);
+        dumpTalonSRXdump.configPeakOutputForward(1, 10);
+        dumpTalonSRXdump.configPeakOutputReverse(-1, 10);
+        dumpTalonSRXdump.config_kP(10, 0, 10);
+        dumpTalonSRXdump.config_kI(1, 0, 10);
+        dumpTalonSRXdump.config_kD(0, 0, 10);
         
         
         climberMotorsTalonSRXclimber1 = new WPI_TalonSRX(12);

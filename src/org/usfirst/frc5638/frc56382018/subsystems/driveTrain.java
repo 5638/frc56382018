@@ -69,6 +69,18 @@ public class driveTrain extends Subsystem {
 		driveTrain.arcadeDrive((-xbox1.getRawAxis(2) + xbox1.getRawAxis(3)), xbox1.getRawAxis(0));
     }
     
+    public void driveReverse(Joystick xbox1) {
+        // Put code here to be run every loop
+    	double steerStick;
+		steerStick = xbox1.getRawAxis(0);
+		
+		if(steerStick < .1 || steerStick > -.1) {
+			steerStick = 0;
+		}
+		
+		driveTrain.arcadeDrive((xbox1.getRawAxis(2) + -xbox1.getRawAxis(3)), xbox1.getRawAxis(0));
+    }
+    
     public void stop() {
     	driveTrain.arcadeDrive(0, 0);
     }

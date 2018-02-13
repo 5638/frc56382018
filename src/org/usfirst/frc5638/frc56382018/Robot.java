@@ -122,5 +122,9 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putNumber("dump position", RobotMap.dumpTalonSRXdump.getSelectedSensorPosition(0));
+        SmartDashboard.putNumber("left drive", RobotMap.driveTrainTalonSRXleft.getSelectedSensorPosition(0));
+        SmartDashboard.putNumber("right drive", RobotMap.driveTrainTalonSRXright.getSelectedSensorPosition(0));
+        SmartDashboard.putNumber("elevator", RobotMap.elevatorTalonSRXelevator.getSelectedSensorPosition(0));
     }
 }
