@@ -51,7 +51,7 @@ public class climberMotors extends Subsystem {
     
     public void climb() {
         // Put code here to be run every loop
-    	climberMotors.set(1);
+    	climberMotors.set(.75);
     }
     
     public void stop() {
