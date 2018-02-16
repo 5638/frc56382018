@@ -57,13 +57,16 @@ public class RobotMap {
         
         driveTrainTalonSRXleft = new WPI_TalonSRX(2);
         driveTrainTalonSRXleft.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
-        driveTrainTalonSRXleft.config_kP(0, 0, 10);
+        driveTrainTalonSRXleft.setSensorPhase(true);
+        driveTrainTalonSRXleft.setSafetyEnabled(false);
+        driveTrainTalonSRXleft.config_kP(0, .1, 10); //.055
         driveTrainTalonSRXleft.config_kI(0, 0, 10);
         driveTrainTalonSRXleft.config_kD(0, 0, 10);
         driveTrainTalonSRXleft.configNominalOutputForward(0, 10);
         driveTrainTalonSRXleft.configNominalOutputReverse(0, 10);
         driveTrainTalonSRXleft.configPeakOutputForward(1, 10);
         driveTrainTalonSRXleft.configPeakOutputReverse(-1, 10);
+        driveTrainTalonSRXleft.configClosedloopRamp(1, 10);
         
         driveTrainVictorSPXleft = new WPI_VictorSPX(3);
         driveTrainVictorSPXleft.follow(driveTrainTalonSRXleft);
@@ -76,13 +79,16 @@ public class RobotMap {
         
         driveTrainTalonSRXright = new WPI_TalonSRX(4);
         driveTrainTalonSRXright.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
-        driveTrainTalonSRXright.config_kP(0, 0, 10);
+        driveTrainTalonSRXright.setSensorPhase(true);
+        driveTrainTalonSRXright.setSafetyEnabled(false);
+        driveTrainTalonSRXright.config_kP(0, .1, 10); //.05
         driveTrainTalonSRXright.config_kI(0, 0, 10);
         driveTrainTalonSRXright.config_kD(0, 0, 10);
         driveTrainTalonSRXright.configNominalOutputForward(0, 10);
         driveTrainTalonSRXright.configNominalOutputReverse(0, 10);
         driveTrainTalonSRXright.configPeakOutputForward(1, 10);
         driveTrainTalonSRXright.configPeakOutputReverse(-1, 10);
+        driveTrainTalonSRXright.configClosedloopRamp(1, 10);
         
         driveTrainVictorSPXright = new WPI_VictorSPX(5);
         driveTrainVictorSPXright.follow(driveTrainTalonSRXright);
@@ -94,7 +100,7 @@ public class RobotMap {
         
         driveTrainRobotDrive21 = new DifferentialDrive(driveTrainleftGearbox, driveTrainrightGearbox);
         
-        driveTrainRobotDrive21.setSafetyEnabled(true);
+        driveTrainRobotDrive21.setSafetyEnabled(false);
         driveTrainRobotDrive21.setExpiration(0.1);
         //driveTrainRobotDrive21.setSensitivity(0.5);
         driveTrainRobotDrive21.setMaxOutput(1.0);

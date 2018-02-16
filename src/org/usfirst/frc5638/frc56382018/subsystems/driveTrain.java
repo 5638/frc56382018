@@ -86,9 +86,11 @@ public class driveTrain extends Subsystem {
     	driveTrain.arcadeDrive(0, 0);
     }
     
-    public void drivePos(double leftDist, double rightDist) {
-    	talonSRXleft.set(ControlMode.Position, leftDist);
-    	talonSRXright.set(ControlMode.Position, rightDist);
+    public void drivePos(double posleft, double posright) {
+    	talonSRXright.set(ControlMode.Position, posright);
+    	talonSRXleft.set(ControlMode.Position, posleft);
+    	//System.out.println(talonSRXright.getMotorOutputPercent());
+    	//talonSRXright.set(ControlMode.Position, 10000);
     }
 
     // Put methods for controlling this subsystem

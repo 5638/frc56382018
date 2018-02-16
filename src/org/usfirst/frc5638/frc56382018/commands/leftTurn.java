@@ -8,30 +8,26 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class drivePos1 extends Command {
-	
-	public drivePos1() {
+public class leftTurn extends Command {
+
+    public leftTurn() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.driveTrain);
     }
-	
-    
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//RobotMap.driveTrainTalonSRXright.setSelectedSensorPosition(0, 0, 10);
-    	//RobotMap.driveTrainTalonSRXleft.setSelectedSensorPosition(0, 0, 10);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-		Robot.driveTrain.drivePos(-10500, 10500);
+    	Robot.driveTrain.drivePos(-4150, -2760);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(RobotMap.driveTrainTalonSRXright.getSelectedSensorVelocity(0) <= 1) {
+        if(RobotMap.driveTrainTalonSRXleft.getSelectedSensorPosition(0) <= 4000) {
         	return true;
         }else{
         	return false;
@@ -47,5 +43,5 @@ public class drivePos1 extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     	end();
-	}
+    }
 }

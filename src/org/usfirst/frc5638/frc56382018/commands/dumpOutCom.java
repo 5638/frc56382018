@@ -12,6 +12,7 @@
 package org.usfirst.frc5638.frc56382018.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5638.frc56382018.Robot;
+import org.usfirst.frc5638.frc56382018.RobotMap;
 
 /**
  *
@@ -50,7 +51,11 @@ public class dumpOutCom extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false;
+    	if(RobotMap.dumpTalonSRXdump.getSelectedSensorPosition(0) <= 10) {
+    		return true;
+    	}else{
+    		return false;
+    	}
     }
 
     // Called once after isFinished returns true
