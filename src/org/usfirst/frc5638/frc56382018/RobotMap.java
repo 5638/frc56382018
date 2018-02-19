@@ -59,14 +59,19 @@ public class RobotMap {
         driveTrainTalonSRXleft.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
         driveTrainTalonSRXleft.setSensorPhase(true);
         driveTrainTalonSRXleft.setSafetyEnabled(false);
-        driveTrainTalonSRXleft.config_kP(0, .1, 10); //.055
-        driveTrainTalonSRXleft.config_kI(0, 0, 10);
-        driveTrainTalonSRXleft.config_kD(0, 0, 10);
+        driveTrainTalonSRXleft.config_kP(0, .17, 10);//(0, .03, 10); //.055
+        driveTrainTalonSRXleft.config_kI(0, 0, 10);//(0, 0.000005, 10);
+        driveTrainTalonSRXleft.config_kD(0, 40, 10);//(0, 200, 10);
+        driveTrainTalonSRXleft.config_kP(1, .1, 10); //.055
+        driveTrainTalonSRXleft.config_kI(1, 0, 10);
+        driveTrainTalonSRXleft.config_kD(1, 0, 10);
+        driveTrainTalonSRXleft.configAllowableClosedloopError(0, 50, 10);
         driveTrainTalonSRXleft.configNominalOutputForward(0, 10);
         driveTrainTalonSRXleft.configNominalOutputReverse(0, 10);
         driveTrainTalonSRXleft.configPeakOutputForward(1, 10);
         driveTrainTalonSRXleft.configPeakOutputReverse(-1, 10);
-        driveTrainTalonSRXleft.configClosedloopRamp(1, 10);
+        driveTrainTalonSRXleft.configClosedloopRamp(0.5, 10);
+        driveTrainTalonSRXleft.configOpenloopRamp(0, 10);
         
         driveTrainVictorSPXleft = new WPI_VictorSPX(3);
         driveTrainVictorSPXleft.follow(driveTrainTalonSRXleft);
@@ -81,14 +86,19 @@ public class RobotMap {
         driveTrainTalonSRXright.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
         driveTrainTalonSRXright.setSensorPhase(true);
         driveTrainTalonSRXright.setSafetyEnabled(false);
-        driveTrainTalonSRXright.config_kP(0, .1, 10); //.05
-        driveTrainTalonSRXright.config_kI(0, 0, 10);
-        driveTrainTalonSRXright.config_kD(0, 0, 10);
+        driveTrainTalonSRXright.config_kP(0, .17, 10);//(0, .03, 10); //.05
+        driveTrainTalonSRXright.config_kI(0, 0, 10);//(0, 0.000005, 10);
+        driveTrainTalonSRXright.config_kD(0, 25, 10);//(0, 200, 10);
+        driveTrainTalonSRXright.config_kP(1, .1, 10); //.05
+        driveTrainTalonSRXright.config_kI(1, 0, 10);
+        driveTrainTalonSRXright.config_kD(1, 0.75, 10);
+        driveTrainTalonSRXright.configAllowableClosedloopError(0, 50, 10);
         driveTrainTalonSRXright.configNominalOutputForward(0, 10);
         driveTrainTalonSRXright.configNominalOutputReverse(0, 10);
         driveTrainTalonSRXright.configPeakOutputForward(1, 10);
         driveTrainTalonSRXright.configPeakOutputReverse(-1, 10);
-        driveTrainTalonSRXright.configClosedloopRamp(1, 10);
+        driveTrainTalonSRXright.configClosedloopRamp(0.5, 10);
+        driveTrainTalonSRXright.configOpenloopRamp(0, 10);
         
         driveTrainVictorSPXright = new WPI_VictorSPX(5);
         driveTrainVictorSPXright.follow(driveTrainTalonSRXright);
@@ -109,11 +119,11 @@ public class RobotMap {
         elevatorTalonSRXelevator.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
         elevatorTalonSRXelevator.configNominalOutputForward(0, 10);
         elevatorTalonSRXelevator.configNominalOutputReverse(0, 10);
-        elevatorTalonSRXelevator.configPeakOutputForward(.5, 10);
+        elevatorTalonSRXelevator.configPeakOutputForward(.75, 10);
         elevatorTalonSRXelevator.configPeakOutputReverse(-.375, 10);
-        elevatorTalonSRXelevator.config_kP(1, 0, 10);
+        elevatorTalonSRXelevator.config_kP(0, .5, 10);
         elevatorTalonSRXelevator.config_kI(0, 0, 10);
-        elevatorTalonSRXelevator.config_kD(0, 0, 10);
+        elevatorTalonSRXelevator.config_kD(0, 10, 10);
         
         intakeTalonSRXintake2 = new WPI_VictorSPX(10);
         
@@ -127,8 +137,8 @@ public class RobotMap {
         dumpTalonSRXdump.configNominalOutputReverse(0, 10);
         dumpTalonSRXdump.configPeakOutputForward(1, 10);
         dumpTalonSRXdump.configPeakOutputReverse(-1, 10);
-        dumpTalonSRXdump.config_kP(10, 0, 10);
-        dumpTalonSRXdump.config_kI(1, 0, 10);
+        dumpTalonSRXdump.config_kP(0, .25, 10);
+        dumpTalonSRXdump.config_kI(0, 0, 10);
         dumpTalonSRXdump.config_kD(0, 0, 10);
         
         

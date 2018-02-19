@@ -1,20 +1,22 @@
 package org.usfirst.frc5638.frc56382018.commands;
 
 import org.usfirst.frc5638.frc56382018.Robot;
-import org.usfirst.frc5638.frc56382018.RobotMap;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class leftTurn extends Command {
+public class forwardtime extends Command {
+	
+	
 
-    public leftTurn(double time) {
+    public forwardtime(double time) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.driveTrain);
-    	setTimeout(1.75);
+    	setTimeout(time);
     }
 
     // Called just before this Command runs the first time
@@ -23,20 +25,12 @@ public class leftTurn extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//Robot.driveTrain.drivePos(-4150, -2760);
-    	Robot.driveTrain.driveTime(0, -.5);
+    	Robot.driveTrain.driveTime(-.75, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	/*
-        if(RobotMap.driveTrainTalonSRXleft.getSelectedSensorPosition(0) <= 4000) {
-        	return true;
-        }else{
-        	return false;
-        }
-        */
-    	return isTimedOut();
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

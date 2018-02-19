@@ -10,10 +10,11 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class rightTurn extends Command {
 
-    public rightTurn() {
+    public rightTurn(double time) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.driveTrain);
+    	setTimeout(time);
     }
 
     // Called just before this Command runs the first time
@@ -22,16 +23,13 @@ public class rightTurn extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.drivePos(2700, 4200);
+    	//Robot.driveTrain.drivePos(2700, 4200);
+    	Robot.driveTrain.driveTime(0, .5);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(RobotMap.driveTrainTalonSRXright.getSelectedSensorPosition(0) >= 4000) {
-        	return true;
-        }else{
-        	return false;
-        }
+        	return isTimedOut();
     }
 
     // Called once after isFinished returns true

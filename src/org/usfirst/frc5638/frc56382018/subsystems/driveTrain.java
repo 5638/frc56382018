@@ -92,6 +92,10 @@ public class driveTrain extends Subsystem {
     	//System.out.println(talonSRXright.getMotorOutputPercent());
     	//talonSRXright.set(ControlMode.Position, 10000);
     }
+    
+    public void driveTime(double speed, double rotation) {
+    	driveTrain.arcadeDrive(speed, rotation);
+    }
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

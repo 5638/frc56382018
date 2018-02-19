@@ -26,16 +26,13 @@ public class drivePos1 extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-		Robot.driveTrain.drivePos(-10500, 10500);
+		Robot.driveTrain.drivePos(-30000, 30000);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(RobotMap.driveTrainTalonSRXright.getSelectedSensorVelocity(0) <= 1) {
-        	return true;
-        }else{
-        	return false;
-        }
+    	
+        return false;
     }
 
     // Called once after isFinished returns true

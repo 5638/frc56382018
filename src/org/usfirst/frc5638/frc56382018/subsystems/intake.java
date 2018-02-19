@@ -50,13 +50,13 @@ public class intake extends Subsystem {
     
     public void in() {
         // Put code here to be run every loop
-    	talonSRXintake1.set(.5);
-    	talonSRXintake2.set(.5);
+    	talonSRXintake1.set(.75);
+    	talonSRXintake2.set(.75);
     }
     
     public void out() {
-    	talonSRXintake1.set(-.5);
-    	talonSRXintake2.set(-.5);
+    	talonSRXintake1.set(-.75);
+    	talonSRXintake2.set(-.75);
     }
     public void stop() {
     	talonSRXintake1.set(0);
