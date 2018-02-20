@@ -47,7 +47,7 @@ public class arm extends Subsystem {
 
     public void armUp() {
         // Put code here to be run every loop
-    	talonSRXarm.set(.5);
+    	talonSRXarm.set(.75);
     }
     public void armDown() {
     	talonSRXarm.set(-.375);

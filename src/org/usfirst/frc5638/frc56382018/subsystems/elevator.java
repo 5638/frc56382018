@@ -57,6 +57,12 @@ public class elevator extends Subsystem {
     	//talonSRXelevator.set(-.375);
     	talonSRXelevator.set(ControlMode.Position, 0);
     }
+    public void eleLevel2() {
+    	talonSRXelevator.set(ControlMode.Position, 5500);
+    }
+    public void eleLevel3() {
+    	talonSRXelevator.set(ControlMode.Position, 14600);
+    }
     public void stop() {
     	talonSRXelevator.set(0);
     }
