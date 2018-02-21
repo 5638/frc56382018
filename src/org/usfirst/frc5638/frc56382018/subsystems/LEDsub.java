@@ -14,13 +14,13 @@ public class LEDsub extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	private final Spark LEDcontroller = RobotMap.LEDcontroller;
+	private final static Spark LEDcontroller = RobotMap.LEDcontroller;
 	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         setDefaultCommand(new LEDcom());
     }
-    public void color(double color){
+    public static void color(double color){
     	LEDcontroller.set(color);
     }
 }

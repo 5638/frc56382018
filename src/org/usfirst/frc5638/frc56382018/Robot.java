@@ -162,21 +162,6 @@ public class Robot extends TimedRobot {
     public Robot() {
     	CameraServer.getInstance().startAutomaticCapture();
     	CameraServer.getInstance().startAutomaticCapture();
-    
-    	/*
-    	DriverStation.Alliance color;
-    	color = DriverStation.getInstance().getAlliance();
-    	if(RobotState.isEnabled() && color == DriverStation.Alliance.Blue){
-    		LEDsub.color(-.83);
-    	}else if(RobotState.isDisabled() && color == DriverStation.Alliance.Blue) {
-    		LEDsub.color(-.09);
-    	}else if(RobotState.isDisabled() && color == DriverStation.Alliance.Red) {
-    		LEDsub.color(-.11);
-    	}else if(RobotState.isEnabled() && color == DriverStation.Alliance.Red) {
-    		LEDsub.color(-.85);
-    	}else if(RobotState.isDisabled()) {
-    		LEDsub.color(-.77);
-    	}
-    	*/
+    	LEDcom.start();
     }
 }
