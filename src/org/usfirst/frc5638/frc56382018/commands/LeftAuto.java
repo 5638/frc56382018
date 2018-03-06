@@ -1,5 +1,7 @@
 package org.usfirst.frc5638.frc56382018.commands;
 
+import org.usfirst.frc5638.frc56382018.subsystems.variables;
+
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
@@ -25,10 +27,10 @@ public class LeftAuto extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	String gameData;
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-        if(gameData.length() > 0) {
-		  if(gameData.charAt(0) == 'L') {
+		  if(variables.left = true) {
+			  addSequential(new resetDumpPos());
+			  addSequential(new resetElevatorCom());
+			  
 			  addSequential(new forwardtime(2.75));
 			  addSequential(new stopCom());
 			  addSequential(new rightTurn(2.25));
@@ -37,23 +39,23 @@ public class LeftAuto extends CommandGroup {
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
 		  } else {
+			  addSequential(new resetDumpPos());
+			  addSequential(new resetElevatorCom());
+			  
 			  addSequential(new forwardtime(.5)); //3
-			  
-			  addSequential(new stopCom());
-			  addSequential(new rightTurn(2));
-			  addSequential(new stopCom());
+			  //addSequential(new stopCom());
+			  //addSequential(new rightTurn(2));
+			  //addSequential(new stopCom());
 			  addSequential(new forwardtime(3));
-			  addSequential(new stopCom());
-			  addSequential(new leftTurn(1.75));
-			  addSequential(new stopCom());
+			  //addSequential(new stopCom());
+			  //addSequential(new leftTurn(1.75));
+			  //addSequential(new stopCom());
 			  addSequential(new forwardtime(1));
-			  addSequential(new stopCom());
-			  addSequential(new stopCom());
-			  addSequential(new dumpOutCom());
-			  addSequential(new dumpInCom());
-			  
+			  //addSequential(new stopCom());
+			  //addSequential(new stopCom());
+			  //addSequential(new dumpOutCom());
+			  //addSequential(new dumpInCom());
 			  addSequential(new stopCom());
 		  }
        }
     }
-}
