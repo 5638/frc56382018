@@ -60,7 +60,7 @@ public class RobotMap {
         driveTrainTalonSRXleft.configPeakOutputForward(1, 10);
         driveTrainTalonSRXleft.configPeakOutputReverse(-1, 10);
         driveTrainTalonSRXleft.configClosedloopRamp(0.5, 10);
-        driveTrainTalonSRXleft.configOpenloopRamp(0, 10);
+        driveTrainTalonSRXleft.configOpenloopRamp(1, 10); //set to 0 if bad; can play with values to make accel/decel smooth
         
         driveTrainVictorSPXleft = new WPI_VictorSPX(3);
         driveTrainVictorSPXleft.follow(driveTrainTalonSRXleft);
@@ -87,7 +87,7 @@ public class RobotMap {
         driveTrainTalonSRXright.configPeakOutputForward(1, 10);
         driveTrainTalonSRXright.configPeakOutputReverse(-1, 10);
         driveTrainTalonSRXright.configClosedloopRamp(0.5, 10);
-        driveTrainTalonSRXright.configOpenloopRamp(0, 10);
+        driveTrainTalonSRXright.configOpenloopRamp(1, 10); //set to 0 if bad; can play with values to make accel/decel smooth
         
         driveTrainVictorSPXright = new WPI_VictorSPX(5);
         driveTrainVictorSPXright.follow(driveTrainTalonSRXright);
