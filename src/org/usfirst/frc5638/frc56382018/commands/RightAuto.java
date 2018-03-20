@@ -1,12 +1,13 @@
-package org.usfirst.frc5638.frc56382018.commands;
+/*package org.usfirst.frc5638.frc56382018.commands;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
- */
+ *//*
 public class RightAuto extends CommandGroup {
 
     public RightAuto() {
@@ -43,6 +44,8 @@ public class RightAuto extends CommandGroup {
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
         if(gameData.length() > 0) {
 		  if(gameData.charAt(0) == 'R') {
+			  //SmartDashboard.putString("FMS Data", gameData);
+			  //SmartDashboard.putString("AutoRoutine", "Dumping");
 			  addSequential(new forwardtime(3));
 			  addSequential(new stopCom());
 			  addSequential(new leftTurn(1.35));
@@ -51,23 +54,27 @@ public class RightAuto extends CommandGroup {
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
 		  } else {
+			  //SmartDashboard.putString("FMS Data", gameData);
+			  //SmartDashboard.putString("AutoRoutine", "Not Dumping");
 			  addSequential(new forwardtime(.5));//3
 			  
-			  addSequential(new stopCom());
-			  addSequential(new leftTurn(4));
-			  addSequential(new stopCom());
+			  //addSequential(new stopCom());
+			  //addSequential(new leftTurn(4));
+			  //addSequential(new stopCom());
 			  addSequential(new forwardtime(3.5));
-			  addSequential(new stopCom());
-			  addSequential(new rightTurn(1.75));
-			  addSequential(new stopCom());
-			  addSequential(new forwardtime(1));
-			  addSequential(new stopCom());
-			  addSequential(new stopCom());
-			  addSequential(new dumpOutCom());
-			  addSequential(new dumpInCom());
+			  //addSequential(new stopCom());
+			  //addSequential(new rightTurn(1.75));
+			  //addSequential(new stopCom());
+			  //addSequential(new forwardtime(1));
+			  //addSequential(new stopCom());
+			  //addSequential(new stopCom());
+			  //addSequential(new dumpOutCom());
+			  //addSequential(new dumpInCom());
 			  
 			  addSequential(new stopCom());
 		  }
        }
     }
 }
+*/
+

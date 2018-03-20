@@ -1,11 +1,12 @@
-package org.usfirst.frc5638.frc56382018.commands;
+/*package org.usfirst.frc5638.frc56382018.commands;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
- */
+ *//*
 public class CenterAuto extends CommandGroup {
 
     public CenterAuto() {
@@ -25,10 +26,15 @@ public class CenterAuto extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	
+    	
     	String gameData;
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
-        if(gameData.length() > 0) {
+		
+       // if(gameData.length() > 0) {
 		  if(gameData.charAt(0) == 'R') {
+			  //SmartDashboard.putString("FMS Data", gameData);
+			  //SmartDashboard.putString("AutoRoutine", "Dumping Right");
 			  addSequential(new forwardtime(.5));
 			  addSequential(new stopCom());
 			  addSequential(new rightTurn(2));
@@ -42,7 +48,10 @@ public class CenterAuto extends CommandGroup {
 			  addSequential(new stopCom());
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
+			  
 		  } else {
+			  //SmartDashboard.putString("FMS Data", gameData);
+			  //SmartDashboard.putString("AutoRoutine", "Dumping Left");
 			  addSequential(new forwardtime(.5));
 			  addSequential(new stopCom());
 			  addSequential(new leftTurn(1.75));
@@ -57,7 +66,8 @@ public class CenterAuto extends CommandGroup {
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
 		  }
-       }
-    	
+       
+        }
     }
-}
+   // }*/
+

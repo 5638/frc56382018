@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
- */
+ *//*
 public class resetDrivePos extends Command {
 
     public resetDrivePos() {
@@ -40,4 +40,4 @@ public class resetDrivePos extends Command {
     protected void interrupted() {
     	end();
     }
-}
+}*/
