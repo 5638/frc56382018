@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
- *//*
+ */
 public class driveForward extends Command {
 
     public driveForward(double timeDelay) {
@@ -49,4 +49,3 @@ public class driveForward extends Command {
     	end();
     }
 }
-*/

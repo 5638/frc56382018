@@ -1,10 +1,7 @@
 /*package org.usfirst.frc5638.frc56382018.commands;
-
 import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
-
 /**
  *
  *//*
@@ -17,37 +14,28 @@ public class drivePos1 extends Command {
     }
 	
     
-
     // Called just before this Command runs the first time
     protected void initialize() {
     	//RobotMap.driveTrainTalonSRXright.setSelectedSensorPosition(0, 0, 10);
     	//RobotMap.driveTrainTalonSRXleft.setSelectedSensorPosition(0, 0, 10);
     }
-
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
 		Robot.driveTrain.drivePos(-30000, 30000);
     }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	
         return false;
     }
-
     // Called once after isFinished returns true
     protected void end() {
     	Robot.driveTrain.stop();
     }
-
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	end();
 	}
-<<<<<<< HEAD
-}*/
-=======
 }
 */
->>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9
