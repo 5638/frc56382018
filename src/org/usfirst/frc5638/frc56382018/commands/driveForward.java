@@ -3,6 +3,7 @@ package org.usfirst.frc5638.frc56382018.commands;
 import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.RobotMap;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -10,10 +11,11 @@ import edu.wpi.first.wpilibj.command.Command;
  *//*
 public class driveForward extends Command {
 
-    public driveForward() {
+    public driveForward(double timeDelay) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.driveTrain);
+    	setTimeout(timeDelay);
     }
 
     // Called just before this Command runs the first time
@@ -22,25 +24,29 @@ public class driveForward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.drivePos(-9300, 9300);
+    	//Robot.driveTrain.drivePos(-9300, 9300);
+    	Robot.driveTrain.driveTime(-.75, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if(RobotMap.driveTrainTalonSRXleft.getSelectedSensorPosition(0) <= 9200) {
-        	return true;
-        }else{
-        	return false;
-        }
+    	//if(RobotMap.driveTrainTalonSRXleft.getSelectedSensorPosition(0) <= 9200) {
+        	//return true;
+        //}else{
+        //	return false;
+       // }
+    	return isTimedOut();
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.driveTrain.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }
 */

@@ -1,4 +1,4 @@
-package org.usfirst.frc5638.frc56382018.commands;
+/*package org.usfirst.frc5638.frc56382018.commands;
 
 import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.RobotMap;
@@ -40,4 +40,9 @@ public class resetDrivePos extends Command {
     protected void interrupted() {
     	end();
     }
+<<<<<<< HEAD
 }*/
+=======
+}
+*/
+>>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9

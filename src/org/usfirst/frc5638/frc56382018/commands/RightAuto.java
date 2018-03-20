@@ -1,6 +1,12 @@
 /*package org.usfirst.frc5638.frc56382018.commands;
 
+import java.awt.Robot;
+
+import org.usfirst.frc5638.frc56382018.subsystems.variables;
+
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.RobotBase;
+import edu.wpi.first.wpilibj.RobotState;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -9,6 +15,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  *//*
 public class RightAuto extends CommandGroup {
+	
+	
 
     public RightAuto() {
         // Add Commands here:
@@ -40,12 +48,19 @@ public class RightAuto extends CommandGroup {
     	//addSequential(new drivePos1());
     	//addSequential(new dumpInCom());
     	//addSequential(new dumpOutCom());
+<<<<<<< HEAD
     	String gameData;
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
         if(gameData.length() > 0) {
 		  if(gameData.charAt(0) == 'R') {
 			  //SmartDashboard.putString("FMS Data", gameData);
 			  //SmartDashboard.putString("AutoRoutine", "Dumping");
+=======
+		  if(variables.right = true) {
+			  addSequential(new resetDumpPos());
+			  addSequential(new resetElevatorCom());
+			  
+>>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9
 			  addSequential(new forwardtime(3));
 			  addSequential(new stopCom());
 			  addSequential(new leftTurn(1.35));
@@ -54,10 +69,17 @@ public class RightAuto extends CommandGroup {
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
 		  } else {
+<<<<<<< HEAD
 			  //SmartDashboard.putString("FMS Data", gameData);
 			  //SmartDashboard.putString("AutoRoutine", "Not Dumping");
 			  addSequential(new forwardtime(.5));//3
 			  
+=======
+			  addSequential(new resetDumpPos());
+			  addSequential(new resetElevatorCom());
+			  
+			  addSequential(new forwardtime(.5));//3
+>>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9
 			  //addSequential(new stopCom());
 			  //addSequential(new leftTurn(4));
 			  //addSequential(new stopCom());
@@ -65,16 +87,26 @@ public class RightAuto extends CommandGroup {
 			  //addSequential(new stopCom());
 			  //addSequential(new rightTurn(1.75));
 			  //addSequential(new stopCom());
+<<<<<<< HEAD
 			  //addSequential(new forwardtime(1));
+=======
+			  addSequential(new forwardtime(1));
+>>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9
 			  //addSequential(new stopCom());
 			  //addSequential(new stopCom());
 			  //addSequential(new dumpOutCom());
 			  //addSequential(new dumpInCom());
+<<<<<<< HEAD
 			  
+=======
+>>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9
 			  addSequential(new stopCom());
 		  }
        }
     }
+<<<<<<< HEAD
 }
 */
+=======
+>>>>>>> 9684d6dcccbfd2744d98a3160de7f6d0ff1378e9
 
