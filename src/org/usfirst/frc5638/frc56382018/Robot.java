@@ -138,6 +138,7 @@ public class Robot extends TimedRobot {
 				  org.usfirst.frc5638.frc56382018.subsystems.variables.right = false;
 			  }
         }
+        SmartDashboard.putString("Game Data", gameData);
         
     	RightAuto = (Command) autonomousModes.getSelected();
         if (RightAuto != null) RightAuto.start();
