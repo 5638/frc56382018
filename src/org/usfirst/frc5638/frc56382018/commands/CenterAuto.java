@@ -1,5 +1,6 @@
 package org.usfirst.frc5638.frc56382018.commands;
 
+import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.subsystems.variables;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -28,7 +29,7 @@ public class CenterAuto extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
-		  if(variables.right = true) {
+		  if(Robot.variables.right = true) {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -45,7 +46,7 @@ public class CenterAuto extends CommandGroup {
 			  addSequential(new stopCom());
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
-		  } else if(variables.left = true) {
+		  } else if(Robot.variables.left = true) {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -66,4 +67,3 @@ public class CenterAuto extends CommandGroup {
        }
     	
     }
-

@@ -111,8 +111,8 @@ public class OI {
       		//DUMPER
       		
       		//CLIMB
-      		Carmup = new JoystickButton(xbox2, 5);
-      		Carmup.whileHeld(new armUp());
+      		Carmup = new JoystickButton(xbox2, 6);
+      		Carmup.whenInactive(new armUp());
       		Carmdown = new JoystickButton(xbox2, 6);
       		Carmdown.whileHeld(new armDown());
       		Winchout = new JoystickButton(xbox2, 10);
@@ -137,10 +137,10 @@ public class OI {
       		forwardDrive.toggleWhenPressed(new driveCom());
       		reverseDrive = new JoystickButton(xbox1, 3);
       		reverseDrive.toggleWhenPressed(new driveComReverse());
-      		drivedist = new JoystickButton(xbox1, 4);
-      		drivedist.whileHeld(new drivePos1());
-      		resetDrive = new JoystickButton(xbox1, 7);
-      		resetDrive.whenPressed(new resetDrivePos());
+      		//drivedist = new JoystickButton(xbox1, 4);
+      		//drivedist.whileHeld(new drivePos1());
+      		//resetDrive = new JoystickButton(xbox1, 7);
+      		//resetDrive.whenPressed(new resetDrivePos());
       		//drive
         
         

@@ -131,11 +131,11 @@ public class Robot extends TimedRobot {
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
         if(gameData.length() > 0) {
 			  if(gameData.charAt(0) == 'R') {
-				  org.usfirst.frc5638.frc56382018.subsystems.variables.right = true;
-				  org.usfirst.frc5638.frc56382018.subsystems.variables.left = false;
+				  variables.right = true;
+				  variables.left = false;
 			  }else{
-				  org.usfirst.frc5638.frc56382018.subsystems.variables.left = true;
-				  org.usfirst.frc5638.frc56382018.subsystems.variables.right = false;
+				  variables.left = true;
+				  variables.right = false;
 			  }
         }
         SmartDashboard.putString("Game Data", gameData);

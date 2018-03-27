@@ -1,7 +1,8 @@
 package org.usfirst.frc5638.frc56382018.commands;
 
-import java.awt.Robot;
 
+
+import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.subsystems.variables;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -47,7 +48,7 @@ public class RightAuto extends CommandGroup {
     	//addSequential(new drivePos1());
     	//addSequential(new dumpInCom());
     	//addSequential(new dumpOutCom());
-		  if(variables.right = true) {
+		  if(Robot.variables.right = true) {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -79,4 +80,3 @@ public class RightAuto extends CommandGroup {
 		  }
        }
     }
-

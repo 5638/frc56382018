@@ -1,5 +1,6 @@
 package org.usfirst.frc5638.frc56382018.commands;
 
+import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.subsystems.variables;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -27,7 +28,7 @@ public class LeftAuto extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-		  if(variables.left = true) {
+		  if(Robot.variables.left = true) {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  

@@ -108,8 +108,8 @@ public class RobotMap {
         elevatorTalonSRXelevator.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
         elevatorTalonSRXelevator.configNominalOutputForward(0, 10);
         elevatorTalonSRXelevator.configNominalOutputReverse(0, 10);
-        elevatorTalonSRXelevator.configPeakOutputForward(.75, 10);
-        elevatorTalonSRXelevator.configPeakOutputReverse(-.375, 10);
+        elevatorTalonSRXelevator.configPeakOutputForward(1, 10); //Sped up to 1... OG was .75
+        elevatorTalonSRXelevator.configPeakOutputReverse(-.5, 10); //Sped up to -.5... OG was -.375
         elevatorTalonSRXelevator.config_kP(0, .5, 10);
         elevatorTalonSRXelevator.config_kI(0, 0, 10);
         elevatorTalonSRXelevator.config_kD(0, 10, 10);

@@ -2,6 +2,7 @@ package org.usfirst.frc5638.frc56382018.commands;
 
 import org.usfirst.frc5638.frc56382018.Robot;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -9,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class forwardtime extends Command {
-	
+	public static String gameData;
 	
 
     public forwardtime(double time) {
@@ -21,6 +22,8 @@ public class forwardtime extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
+    	gameData = DriverStation.getInstance().getGameSpecificMessage();
     }
 
     // Called repeatedly when this Command is scheduled to run
