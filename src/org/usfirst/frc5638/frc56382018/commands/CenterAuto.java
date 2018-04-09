@@ -29,7 +29,7 @@ public class CenterAuto extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
-		  if(Robot.variables.right = true) {
+		  if(Robot.gamedata.charAt(0) == 'R') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -46,7 +46,7 @@ public class CenterAuto extends CommandGroup {
 			  addSequential(new stopCom());
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
-		  } else if(Robot.variables.left = true) {
+		  } else if(Robot.gamedata.charAt(0) == 'L') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  

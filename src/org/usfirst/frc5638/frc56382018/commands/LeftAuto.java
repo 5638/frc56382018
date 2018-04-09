@@ -28,7 +28,7 @@ public class LeftAuto extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-		  if(Robot.variables.left = true) {
+		  if(Robot.gamedata.charAt(0) == 'L') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -39,7 +39,7 @@ public class LeftAuto extends CommandGroup {
 			  addSequential(new stopCom());
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
-		  } else {
+		  } else if(Robot.gamedata.charAt(0) == 'R') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
