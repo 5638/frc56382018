@@ -149,7 +149,7 @@ public class Robot extends TimedRobot {
 		
 		//This tells us that we've gotten the GameData, what it is, and how long it took to get it.
 		if(gamedata != "UUU") {
-			System.out.println("GameData Retrieved in " + timer + " seconds!");
+			System.out.println("GameData Retrieved in " + Timer.getFPGATimestamp() - timer + " seconds!");
 			System.out.println("Gamedata is: " + gamedata);
 		}
         
