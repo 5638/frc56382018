@@ -143,13 +143,18 @@ public class Robot extends TimedRobot {
 				&& gamedata.charAt(2) == 'U'
 				|| Timer.getFPGATimestamp() - timer > 10) 
 		{	
-			gamedata = DriverStation.getInstance().getGameSpecificMessage();
-			Timer.delay(.05);
+			try {
+				Thread.sleep(5);
+				gamedata = DriverStation.getInstance().getGameSpecificMessage();
+				System.out.println(gamedata  + ": This should be UUU which means No Data Aquired. If anything other than that, code is buggy.");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		//This tells us that we've gotten the GameData, what it is, and how long it took to get it.
 		if(gamedata != "UUU") {
-			System.out.println("GameData Retrieved in " + timer + " seconds!");
+			System.out.println("GameData Retrieved in " + (Timer.getFPGATimestamp() - timer) + " seconds!");
 			System.out.println("Gamedata is: " + gamedata);
 		}
         
@@ -163,7 +168,7 @@ public class Robot extends TimedRobot {
 				&& gamedata.charAt(2) != 'U') 
         {	
         	autonomousCommand.start();
-        }else{
+        }else if(gamedata.charAt(0) == 'U' && Timer.getFPGATimestamp() - timer > 11){
         	driveForward.start();
         }
     }
