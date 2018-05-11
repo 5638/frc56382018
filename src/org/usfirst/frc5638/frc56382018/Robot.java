@@ -144,7 +144,7 @@ public class Robot extends TimedRobot {
 				|| Timer.getFPGATimestamp() - timer > 10) 
 		{	
 			try {
-				Thread.sleep(5);
+				Thread.sleep(5); //Makes the thread wait 5ms before trying again to avoid overload.
 				gamedata = DriverStation.getInstance().getGameSpecificMessage();
 				System.out.println(gamedata  + ": This should be UUU which means No Data Aquired. If anything other than that, code is buggy.");
 			} catch (InterruptedException e) {
