@@ -139,23 +139,9 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-    	/*
-    	String gameData;
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-        if(gameData.length() > 0) {
-			  if(gameData.charAt(0) == 'R') {
-				  variables.right = true;
-				  variables.left = false;
-			  }else{
-				  variables.left = true;
-				  variables.right = false;
-			  }
-        }
-        if(variables.right == true || variables.left == true) {
-        */
-        	RightAuto = (Command) autonomousModes.getSelected();
-        	if (RightAuto != null) RightAuto.start();
-        //}
+        RightAuto = (Command) autonomousModes.getSelected();
+        if (RightAuto != null) RightAuto.start();
+        
     	RobotMap.dumpTalonSRXdump.setSelectedSensorPosition(0, 0, 10); //Set dump position to 0
     	RobotMap.elevatorTalonSRXelevator.setSelectedSensorPosition(0, 0, 10); //Set elevator position to 0
     	
