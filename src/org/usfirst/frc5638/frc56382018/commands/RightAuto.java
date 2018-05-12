@@ -51,6 +51,7 @@ public class RightAuto extends CommandGroup {
     	//Timer.delay(.1);
 		
     	if(Robot.right == true) {
+		  if(Robot.gamedata.charAt(0) == 'R') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -61,7 +62,8 @@ public class RightAuto extends CommandGroup {
 			  addSequential(new stopCom());
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
-		  } else {
+			  
+		  } else if(Robot.gamedata.charAt(0) == 'L') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -81,4 +83,5 @@ public class RightAuto extends CommandGroup {
 			  addSequential(new stopCom());
 		  }
        }
+    }
 }
