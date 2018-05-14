@@ -4,6 +4,7 @@ import org.usfirst.frc5638.frc56382018.Robot;
 import org.usfirst.frc5638.frc56382018.subsystems.variables;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -28,6 +29,9 @@ public class LeftAuto extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	//Timer.delay(.1);
+		 
+    	if(Robot.left == true) {
 		  if(Robot.gamedata.charAt(0) == 'L') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
@@ -60,3 +64,4 @@ public class LeftAuto extends CommandGroup {
 		  }
        }
     }
+}
