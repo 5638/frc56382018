@@ -171,11 +171,11 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        autonomousCommand = (Command) autonomousModes.getSelected();
+        //autonomousCommand = (Command) autonomousModes.getSelected();
     	//USED THIS CODE https://github.com/wh1ter0se/PowerUp-2018/blob/master/src/org/usfirst/frc/team3695/robot/Robot.java
     	System.out.println("AUTO STARTING... YOU HAVE BEEN WARNED.");
     	
-    	if(autonomousModes.getSelected() != null) {
+    	if(WhatDoChooser.getSelected() != null) {
     		auto = new CommandGroupAuto(positionChooser.getSelected(), WhatDoChooser.getSelected());
     		auto.start();
     	}
