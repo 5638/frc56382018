@@ -31,7 +31,7 @@ public class RobotMap {
     public static WPI_VictorSPX intakeTalonSRXintake2;
     public static WPI_VictorSPX intakeTalonSRXintake1;
     public static WPI_TalonSRX dumpTalonSRXdump;
-    public static WPI_TalonSRX climberMotorsTalonSRXclimber1;
+    public static WPI_VictorSPX climberMotorsTalonSRXclimber1;
     public static WPI_TalonSRX climberMotorsTalonSRXclimber2;
     public static SpeedControllerGroup climberMotorsSpeedControllerGroup1;
     public static WPI_TalonSRX armTalonSRXarm;
@@ -131,7 +131,7 @@ public class RobotMap {
         dumpTalonSRXdump.config_kD(0, 0, 10);
         
         
-        climberMotorsTalonSRXclimber1 = new WPI_TalonSRX(12);
+        climberMotorsTalonSRXclimber1 = new WPI_VictorSPX(12);
         
         climberMotorsTalonSRXclimber1.setInverted(false);
         

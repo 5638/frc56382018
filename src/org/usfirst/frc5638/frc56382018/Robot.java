@@ -37,15 +37,15 @@ import com.kauailabs.navx.frc.AHRS;
  */
 public class Robot extends TimedRobot {
 
-    Command RightAuto;
-    Command RightAutoDump;
-    Command CenterAuto;
-    Command CenterAutoRight;
-    Command LeftAuto;
-    Command LeftAutoDump;
-    Command drivePos1;
-    Command driveForward;
-    Command autonomousCommand;
+    public Command RightAuto;
+    public Command RightAutoDump;
+    public Command CenterAuto;
+    public Command CenterAutoRight;
+    public Command LeftAuto;
+    public Command LeftAutoDump;
+    public Command drivePos1;
+    public Command driveForward;
+    public Command autonomousCommand;
     SendableChooser<Command> autonomousModes;
 
     public static OI oi;
@@ -117,9 +117,13 @@ public class Robot extends TimedRobot {
         autonomousModes = new SendableChooser<Command>();
         SmartDashboard.putData("Auto mode", autonomousModes);
         autonomousModes.addObject("Right Auto", new RightAuto());
+        //autonomousModes.setName("Right Auto");
         autonomousModes.addObject("Center Auto", new CenterAuto());
+        //autonomousModes.setName("Center Auto");
         autonomousModes.addObject("Left Auto", new LeftAuto());
+        //autonomousModes.setName("Left Auto");
         autonomousModes.addObject("Drive Straight", new driveForward(3));
+        //autonomousModes.setName("Drive Straight");
         autonomousModes.addObject("Do Nothing", new stopCom());
     }
 
@@ -139,8 +143,8 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        RightAuto = (Command) autonomousModes.getSelected();
-        if (RightAuto != null) RightAuto.start();
+        autonomousCommand = (Command) autonomousModes.getSelected();
+        
         
     	RobotMap.dumpTalonSRXdump.setSelectedSensorPosition(0, 0, 10); //Set dump position to 0
     	RobotMap.elevatorTalonSRXelevator.setSelectedSensorPosition(0, 0, 10); //Set elevator position to 0
@@ -169,19 +173,19 @@ public class Robot extends TimedRobot {
 		if(gamedata != "UUU") {
 			System.out.println("GameData Retrieved in " + (Timer.getFPGATimestamp() - timer) + " seconds!");
 			System.out.println("Gamedata is: " + gamedata);
+			System.out.println(autonomousModes.getSelected());
 		}
         
-        SmartDashboard.putString("Game Data", gamedata);
+        //SmartDashboard.putString("Game Data", gamedata);
         
-    	autonomousCommand = (Command) autonomousModes.getSelected();
     	//Checks to see if an auto is chosen and if GameGata is usable. If any of these are not true, it defaults to drive forward.
-        if (autonomousCommand != null 
+        /*if (autonomousCommand != null 
         		&& gamedata.charAt(0) != 'U' 
 				&& gamedata.charAt(1) != 'U'
 				&& gamedata.charAt(2) != 'U') 
-        {	
-        	autonomousCommand.start();
-        }else if(gamedata.charAt(0) == 'U' && Timer.getFPGATimestamp() - timer > 11){
+        {	*/
+        	 if(autonomousModes.getSelected() != null) autonomousCommand.start();
+        if(gamedata.charAt(0) == 'U' && Timer.getFPGATimestamp() - timer > 11){
         	driveForward.start();
         }
     }

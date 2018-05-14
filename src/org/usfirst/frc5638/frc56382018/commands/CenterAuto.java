@@ -32,11 +32,9 @@ public class CenterAuto extends CommandGroup {
         // arm.
     	//Timer.delay(.1);
     	
-		  if(Robot.right == true) {
+		  System.out.println("im in center auto");
 		  if(Robot.gamedata.charAt(0) == 'R') {
-			  addSequential(new resetDumpPos());
-			  addSequential(new resetElevatorCom());
-			  
+			  System.out.println("i should be driving");
 			  addSequential(new forwardtime(.5));
 			  addSequential(new stopCom());
 			  addSequential(new rightTurn(2));
@@ -50,7 +48,8 @@ public class CenterAuto extends CommandGroup {
 			  addSequential(new stopCom());
 			  addSequential(new dumpOutCom());
 			  addSequential(new dumpInCom());
-		  }else if(Robot.gamedata.charAt(0) == 'L') {
+			  
+		 }else if(Robot.gamedata.charAt(0) == 'L') {
 			  addSequential(new resetDumpPos());
 			  addSequential(new resetElevatorCom());
 			  
@@ -69,6 +68,8 @@ public class CenterAuto extends CommandGroup {
 			  addSequential(new dumpInCom());
 		  }
 	   }
-    }
 }
+
+    
+
 
