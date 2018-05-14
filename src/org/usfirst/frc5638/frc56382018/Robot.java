@@ -133,8 +133,12 @@ public class Robot extends TimedRobot {
         positionChooser = new SendableChooser<>();
 		positionChooser.addDefault(Position.CENTER.toString(), Position.CENTER); // set default to center
 		for(int i = 1; i < Position.values().length; i++) { 
-		positionChooser.addObject(Position.values()[i].toString(), Position.values()[i]); } // add each position enum value to chooser
+			positionChooser.addObject(Position.values()[i].toString(), Position.values()[i]); 
+		} // add each position enum value to chooser
 		SmartDashboard.putData("Position", positionChooser); //display the chooser on the dash
+		
+		
+		
 		
 		WhatDoChooser = new SendableChooser<>();
 		WhatDoChooser.addDefault(WhatDo.NOTHING.toString(), WhatDo.NOTHING); // set default to nothing
