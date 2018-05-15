@@ -149,7 +149,7 @@ public class Robot extends TimedRobot {
 		
 		
 		WhatDoChooser = new SendableChooser<>();
-		WhatDoChooser.addDefault(WhatDo.NOTHING.toString(), WhatDo.NOTHING); // set default to nothing
+		WhatDoChooser.addDefault(WhatDo.RUN_FOR_IT.toString(), WhatDo.RUN_FOR_IT); // set default to nothing
 		for(int i = 1; i < WhatDo.values().length; i++) { 
 			WhatDoChooser.addObject(WhatDo.values()[i].toString(), WhatDo.values()[i]); 
 		} // add each autonomous goal to chooser
