@@ -42,7 +42,8 @@ public class CommandGroupAuto extends CommandGroup {
 							addSequential(new forwardtime(2.75));
 							addSequential(new stopCom());
 							addSequential(new rightTurn(2.25));
-							addSequential(new forwardtime(.25));
+							addSequential(new forwardtime(.5));
+							addSequential(new stopCom());
 							addSequential(new stopCom());
 							addSequential(new dumpInCom());
 							addSequential(new dumpOutCom());
@@ -77,13 +78,13 @@ public class CommandGroupAuto extends CommandGroup {
 							addSequential(new resetElevatorCom());  
 							addSequential(new forwardtime(.5));
 							addSequential(new stopCom());
-							addSequential(new leftTurn(1.75));
+							addSequential(new leftTurn(1.3));
 							addSequential(new stopCom());
-							addSequential(new forwardtime(1.5));
+							addSequential(new forwardtime(1.25));
 							addSequential(new stopCom());
-							addSequential(new rightTurn(2));
+							addSequential(new rightTurn(1.8));
 							addSequential(new stopCom());
-							addSequential(new forwardtime(1));
+							addSequential(new forwardtime(2));
 							addSequential(new stopCom());
 							addSequential(new stopCom());
 							addSequential(new dumpOutCom());
@@ -94,13 +95,13 @@ public class CommandGroupAuto extends CommandGroup {
 							addSequential(new resetElevatorCom());
 							addSequential(new forwardtime(.5));
 							addSequential(new stopCom());
-							addSequential(new rightTurn(2));
+							addSequential(new rightTurn(1.75));
 							addSequential(new stopCom());
 							addSequential(new forwardtime(1));
 							addSequential(new stopCom());
 							addSequential(new leftTurn(1.75));
 							addSequential(new stopCom());
-							addSequential(new forwardtime(1));
+							addSequential(new forwardtime(2));
 							addSequential(new stopCom());
 							addSequential(new stopCom());
 							addSequential(new dumpOutCom());
@@ -130,13 +131,16 @@ public class CommandGroupAuto extends CommandGroup {
 						if (gameData.charAt(0) == 'R'){ //When the switch is on the right
 							addSequential(new resetDumpPos());
 							addSequential(new resetElevatorCom());
-							addSequential(new forwardtime(3));
+							addSequential(new forwardtime(2.5));
 							addSequential(new stopCom());
-							addSequential(new leftTurn(1.35));
-							addSequential(new forwardtime(.25));
+							addSequential(new leftTurn(1));
 							addSequential(new stopCom());
-							addSequential(new dumpOutCom());
+							addSequential(new stopCom());
+							addSequential(new forwardtime(.5));
+							addSequential(new stopCom());
+							addSequential(new stopCom());
 							addSequential(new dumpInCom());
+							addSequential(new dumpOutCom());
 						} else { //When the switch is on the left
 							addSequential(new resetDumpPos());
 							addSequential(new resetElevatorCom());
